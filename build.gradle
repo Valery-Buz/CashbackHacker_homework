@@ -14,10 +14,11 @@ repositories {
     mavenCentral()
 }
 
-dependencies {
-    testImplementation 'org.junit.jupiter:junit-jupiter:5.8.1'
-}
+    dependencies {
+        testImplementation 'org.testng:testng:7.1.0'
 
-test {
-    useJUnitPlatform()
-}
+    }
+
+    test {
+        useTestNG()
+    }
