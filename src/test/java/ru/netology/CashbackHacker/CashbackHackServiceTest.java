@@ -7,7 +7,7 @@ import static org.testng.AssertJUnit.*;
 class CashbackHackServiceTest {
 
     @Test
-    public static void cashbackRemain() {
+    public void amountUnderTheBorder() {
         CashbackHackService cashbackHackService = new CashbackHackService();
 
         int amount = 900;
@@ -17,4 +17,29 @@ class CashbackHackServiceTest {
 
         assertEquals(actual, expected);
     }
+
+    @Test
+    public void amountOverTheBorder() {
+        CashbackHackService cashbackHackService = new CashbackHackService();
+
+        int amount = 1500;
+        int expected = 500;
+
+        int actual = cashbackHackService.remain(amount);
+
+        assertEquals(actual, expected);
+    }
+
+    @Test
+    public void amountEqualsBorder() {
+        CashbackHackService cashbackHackService = new CashbackHackService();
+
+        int amount = 1000;
+        int expected = 0;
+
+        int actual = cashbackHackService.remain(amount);
+
+        assertEquals(actual, expected);
+    }
+
 }
